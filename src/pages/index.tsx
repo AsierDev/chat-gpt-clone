@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Head from 'next/head'
-import { ChatGPTLogo, PlusIcon } from '@/components/icons'
+import { ChatGPTLogo, PlusIcon, SendIcon } from '@/components/icons'
 import { Avatar } from '@/components/avatar'
 
 function Layout ({ children } : {children: React.ReactNode}) {
@@ -79,8 +79,49 @@ function Chat () {
           <Message key={message.id} {...message} />
         ))}
       </main>
-      {/* <ChatForm /> */}
+      <ChatForm />
     </div>
+  )
+}
+
+function ChatForm () {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null)
+
+  const handleSubmit = () => {
+
+  }
+  const handleKeyDown = () => {
+
+  }
+  const handleChange = () => {
+
+  }
+  return (
+    <section className='absolute bottom-0 w-full left-0 right-0 ml-32'>
+      <form
+        onSubmit={handleSubmit}
+        onKeyDown={handleKeyDown}
+        className='flex flex-row max-w-3xl pt-6 m-auto mb-6'
+      >
+        <div className='relative flex flex-col flex-grow w-full px-4 py-3 text-white border rounded-md shadow-lg bg-gptlightgray border-gray-900/50'>
+          <textarea
+            onChange={handleChange}
+            ref={textAreaRef}
+            rows={1}
+            tabIndex={0}
+            autoFocus
+            defaultValue=''
+            className='w-full h-[24px] resize-none bg-transparent m-0 border-0 outline-none'
+          />
+          <button
+            type='submit'
+            className='absolute p-1 rounded-md bottom-2.5 right-2.5'
+          >
+            <SendIcon />
+          </button>
+        </div>
+      </form>
+    </section>
   )
 }
 
