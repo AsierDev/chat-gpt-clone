@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+package-lock.json
 
 # testing
 /coverage
@@ -40,3 +41,6 @@ next-env.d.ts
 /.idea/modules.xml
 /.idea/vcs.xml
 /.idea/inspectionProfiles/Project_Default.xml
+/.idea/chat-gpt-clone.iml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
